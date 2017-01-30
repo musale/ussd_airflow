@@ -30,7 +30,8 @@ class TestScreensUsingFilters(UssdTestCase.BaseUssdTestCase):
             "{now_day_name}. And next month {three_months}\n"
             "Testing striping date. After striping this "
             "date 2017-01-20 we should get the year, month and day. "
-            "The day is {strip_day_name}\n".format(
+            "The day is {strip_day_name}\n"
+            "Testing translation January in french is janvier\n".format(
                 now=now,
                 now_month=now.month,
                 now_year=now.year,

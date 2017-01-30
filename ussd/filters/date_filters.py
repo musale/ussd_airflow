@@ -1,6 +1,7 @@
 from ussd.core import register_filter
 from datetime import datetime
 import calendar
+import locale
 
 
 @register_filter
@@ -19,15 +20,28 @@ def year(date_time):
 
 
 @register_filter
-def month_name(no_month):
+def month_name(no_month, language=None):
     if isinstance(no_month, datetime):
         no_month = no_month.month
-    return calendar.month_name[no_month]
+
+    # change language locale
+    if language is not None:
+        locale.setlocale(locale.LC_ALL, language)
+    result = calendar.month_name[no_month]
+
+    # return language locale to the default one
+    locale.setlocale(locale.LC_ALL, "")
+
+    return result
 
 
 @register_filter
-def day_name(date_time):
-    return date_time.strftime("%A")
+def day_name(date_time, language=None):
+    if language is not None:
+        locale.setlocale(locale.LC_ALL, language)
+    result = date_time.strftime("%A")
+    locale.setlocale(locale.LC_ALL, '')
+    return result
 
 
 @register_filter
