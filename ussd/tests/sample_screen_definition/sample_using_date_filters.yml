@@ -13,4 +13,4 @@ screen_with_date_filters:
     the year, month and day.
     The day is {{"2017-01-20"|strip("%Y-%m-%d")|day}}
 
-    Testing translation January in french is {{1|month_name("fr_FR")}}
+    Testing translation January in french is {{1|month_name("fr_fr")}}
