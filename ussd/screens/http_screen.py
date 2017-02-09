@@ -104,7 +104,8 @@ class HttpScreen(UssdHandlerAbstract):
                 if not i[0].startswith('_'):
                     # Ignores methods
                     if not inspect.ismethod(i[1]) and \
-                                    type(i[1]) in (str, dict, list, tuple):
+                                    type(i[1]) in \
+                                    (str, dict, int, dict, float, list, tuple):
                         if len(i) == 2:
                             response_to_save.update(
                                 {i[0]: i[1]}
