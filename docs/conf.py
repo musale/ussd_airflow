@@ -19,7 +19,9 @@
 
 import os
 import sys
+
 import django
+
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'ussd_airflow.settings'
 django.setup()
@@ -61,8 +63,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Ussd Airflow'
-copyright = '2016, Francis Mwangi'
+project = 'USSD Airflow'
+copyright = '2017, Francis Mwangi'
 author = 'Francis Mwangi'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -272,7 +274,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'UssdAirflow.tex', 'Ussd Airflow Documentation',
+    (master_doc, 'UssdAirflow.tex', 'USSD Airflow Documentation',
      'Francis Mwangi', 'manual'),
 ]
 
@@ -308,7 +310,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ussdairflow', 'Ussd Airflow Documentation',
+    (master_doc, 'ussdairflow', 'USSD Airflow Documentation',
      [author], 1)
 ]
 
@@ -323,7 +325,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'UssdAirflow', 'Ussd Airflow Documentation',
+    (master_doc, 'UssdAirflow', 'USSD Airflow Documentation',
      author, 'UssdAirflow', 'One line description of project.',
      'Miscellaneous'),
 ]

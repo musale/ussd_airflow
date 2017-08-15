@@ -1,22 +1,25 @@
+.. _tutorial:
+
+
 =====================
-Creating ussd screens
+Creating USSD screens
 =====================
 
-This document is a whirlwind tour of how to create ussd screen.
+This document is a whirlwind tour of how to create USSD screen.
 
-Strong feature of ussd airflow is to create ussd screen via yaml and not code.
-This make it easier to give the product owners to design ussd without
-knowing how to code
+Strong feature of USSD airflow is to create USSD screen via ``yaml`` and not
+directly in code. This makes it easier to give the product owners to design
+USSD without knowing how to code
 
-In ussd airflow customer journey is created via yaml.
-Each section in a yaml defines a ussd screen.
-There different types of ussd and each type has its own rule on how
-to write ussd application
+In USSD airflow, the customer journey is created via ``yaml``.
+Each section in the ``yaml`` file defines a USSD screen.
+There different types of USSD and each type has its own rule on how
+to write USSD application.
 
 Common rule in creating any kind of screen
 **Each screen has field called "type"** apart from initial_screen
 
-The following are types of ussd and the rules to write them.
+The following are types of USSD and the rules to write them.
 
 1. Initial screen (type -> initial_screen)
 ------------------------------------------
@@ -69,4 +72,3 @@ them:***
    .. code-block:: text
 
          python manage.py validate_ussd_journey /path/to/your/ussd/file.yaml
-

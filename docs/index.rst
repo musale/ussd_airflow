@@ -1,29 +1,19 @@
 ========================================
-Welcome to Ussd Airflow's documentation!
+Welcome to USSD Airflow's documentation!
 ========================================
 
-Ussd Airflow is a platform used to create ussd application by defining ussd
+USSD Airflow is a platform used to create USSD application by defining USSD
 screens in a yaml file
 
-Getting Started
----------------
-Getting started with ussd airflow.
-This assumes you know how ussd works, to learn more how ussd works
-:doc:`how_ussd_works`
+This documentation will show you how to get started with USSD Airflow. If
+you’re a new USSD Airflow, start here!
 
 .. toctree::
-    quick_start
-    tutorial
+   :maxdepth: 2
 
-How ussd works
---------------
-
-.. toctree::
-    how_ussd_works
-
-Internal Architecture
----------------------
-    .. automodule:: ussd.core
-
-
-
+   introduction
+   starting
+   tutorial
+   getting_help
+   contributors
+   change_log

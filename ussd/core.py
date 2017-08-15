@@ -1,32 +1,35 @@
 """
 Comming soon
 """
-from urllib.parse import unquote
-from copy import copy, deepcopy
-from rest_framework.views import APIView
-from django.http import HttpResponse
-from structlog import get_logger
-import staticconf
-from django.conf import settings
-from importlib import import_module
-from django.contrib.sessions.backends import signed_cookies
-from django.contrib.sessions.backends.base import CreateError
-from jinja2 import Template, Environment, TemplateSyntaxError
-from .screens.serializers import UssdBaseSerializer
-from rest_framework.serializers import SerializerMetaclass
-import re
+import inspect
 import json
 import os
-from configure import Configuration
+import re
+from copy import copy, deepcopy
 from datetime import datetime
-from ussd.models import SessionLookup
-from annoying.functions import get_object_or_None
-from ussd import defaults as ussd_airflow_variables
-from django.utils import timezone
+from importlib import import_module
+from urllib.parse import unquote
+
 import requests
-import inspect
-from ussd.tasks import report_session
+import staticconf
+from configure import Configuration
+from django.conf import settings
+from django.contrib.sessions.backends import signed_cookies
+from django.contrib.sessions.backends.base import CreateError
+from django.http import HttpResponse
+from django.utils import timezone
+from jinja2 import Environment, Template, TemplateSyntaxError
+from rest_framework.serializers import SerializerMetaclass
+from rest_framework.views import APIView
+from structlog import get_logger
+from ussd import defaults as ussd_airflow_variables
 from ussd import utilities
+from ussd.models import SessionLookup
+from ussd.tasks import report_session
+
+from annoying.functions import get_object_or_None
+
+from .screens.serializers import UssdBaseSerializer
 
 _registered_ussd_handlers = {}
 _registered_filters = {}
@@ -108,9 +111,7 @@ class UssdRequest(object):
     """
     :param session_id:
         used to get session or create session if does not
-        exits.
-
-        If session is less than 8 we add *s* to make the session
+        exits. If session is less than 8 we add *s* to make the session
         equal to 8
 
     :param phone_number:
@@ -146,16 +147,16 @@ class UssdRequest(object):
                  expiry=180,
                  **kwargs):
         """
-        :param session_id: Used to maintain session 
-        :param phone_number: user dialing in   
+        :param session_id: Used to maintain session
+        :param phone_number: user dialing in
         :param ussd_input: input entered by user
         :param language: language to be used
         :param default_language: language to used
-        :param use_built_in_session_management: Used to enable ussd_airflow to 
-            manage its own session, by default its set to False, is set to true 
-        then the session_id should be None and expiry can't be None. 
+        :param use_built_in_session_management: Used to enable ussd_airflow to
+            manage its own session, by default its set to False, is set to true
+        then the session_id should be None and expiry can't be None.
         :param expiry: Its only used if use_built_in_session_management has
-        been enabled. 
+        been enabled.
         :param kwargs: All other extra arguments
         """
 
