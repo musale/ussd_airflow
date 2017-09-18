@@ -18,7 +18,7 @@ from django.contrib.sessions.backends import signed_cookies
 from django.contrib.sessions.backends.base import CreateError
 from django.http import HttpResponse
 from django.utils import timezone
-from jinja2 import Environment, Template, TemplateSyntaxError
+from jinja2 import Environment, Template
 from rest_framework.serializers import SerializerMetaclass
 from rest_framework.views import APIView
 from structlog import get_logger

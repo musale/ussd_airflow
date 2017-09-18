@@ -49,3 +49,11 @@ Piusdan
 Piusdan has done a fix to the project.
 
 - Github: https://github.com/piusdan
+
+Martin Musale
+********************
+
+Musale has done an update to make this documentation clearer.
+
+- Github: https://github.com/musale
+

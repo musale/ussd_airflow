@@ -7,6 +7,19 @@ USSD Airflow Changelog
 
 All library changes, in descending order.
 
+Ussd Airflow Changelog
+======================
+
+Version 0.0.4.9
+-----------------
+Feature
+    - Adding function screen format.
+
+Version 0.0.4.8
+-----------------
+Feature
+    - Adding feature for customizing index format
+
 Version 0.0.4.6
 -----------------
 Feature
